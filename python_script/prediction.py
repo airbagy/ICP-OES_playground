@@ -31,8 +31,7 @@ while analt not in all_elems:
 print("The analyte you have selected is: " + analt)
 
 # Selection of peak of interest
-analts = df["Analyte"].tolist()
-analts = set(analts) # Deduplicate the list of analyte
+analts = df["Analyte"].drop_duplicates()
 peaks = [] # List of wavelengths for user to choose from
 peak = ""
 for elem in analts:
@@ -46,7 +45,7 @@ else:
 	for i in range(0, len(peaks)):
 		print(str(i+1) + ". " + peaks[i])
 try:
-    num = int(input("Please select the wavelength of interest(nm): "))-1
+    num = int(input("Please select the wavelength of interest(index): "))-1
     peak = peaks[num]
 except ValueError:
     print("Not an integer value...")

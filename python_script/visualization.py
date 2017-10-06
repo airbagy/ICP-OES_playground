@@ -14,4 +14,4 @@ plt.show()
 
 
 df[['2ppm_Fe_ax', '20ppmFe_ax', '200ppmFe_ax']].plot()
-plt.show()
+plt.show() 
